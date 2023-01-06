@@ -219,3 +219,62 @@ section .section-one .s-o-display .s-o-video video {
     object-position: center center;
 }
 
+/* Section Two */
+
+section .section-two {
+
+}
+
+section .section-two .s-t-display {
+    display: flex;
+    justify-content: center;
+}
+
+section .section-two .s-t-img {
+    margin: 0px 80px;
+}
+
+section .section-two .s-t-img img {
+    margin: 40px;
+    -webkit-box-shadow: -26px 32px 0px 0px rgba(94,94,74);
+    -moz-box-shadow: -26px 32px 0px 0px rgba(94,94,74);
+    box-shadow: -26px 32px 0px 0px rgba(94,94,74);
+}
+
+section .section-two .s-t-caption {
+    margin: 0px 80px;
+    padding-top: 120px;
+    width: 416px;
+    height: 687px;
+}
+
+section .section-two .s-t-display .s-t-caption span {
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0.8px;
+    color: var(--font-color);
+}
+
+
+section .section-two .s-t-display .s-t-caption p {
+    margin: 45px 0px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    line-height: 27.2px;
+    color: var(--font-color);
+}
+
+section .section-two .s-t-display .s-t-caption a {
+    padding: 15px 45px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-color);
+    border: 1px solid var(--font-color);
+}
+
+section .section-two .s-t-display .s-t-caption a:hover {
+    border: none;
+    transition: .4s ease;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+}
