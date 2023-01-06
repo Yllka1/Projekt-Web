@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+:root {
+    --font-color: rgb(0, 0, 0);
+    --bg-green: rgb(145,145,102);
+    --bg-gray: rgb(94,94,74);
+    --bg-overlay-color: rgb(215,215,203);
+    --bg-black: #000;
+    --bg-white: #fff;
+    --bg-overlay-color-op: rgb(245, 245, 238);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* First Page */
+
+/* Header-i */
+
+header {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li  {
+    padding: 0px 15px;
+}
+
+nav ul li a {
+    border: none;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+header nav .logo {
+    padding: 10px 25px;
+    border: 3px solid var(--bg-black);
+}
+
+header nav .logo a {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--bg-black);
+}
+
+header nav .input-field {
+    display: flex;
+    padding: 15px;
+    width: 220px;
+    border-bottom: 1.5px solid var(--font-color);
+}
+
+header nav .input-field:hover {
+    border: 2px solid var(--font-color);
+}
+
+header nav .input-field input {
+    border: none;
+    outline: 0;
+    padding-left: 10px;
+}
+
+header nav .input-field input::placeholder {
+    font-size: 17px;
+}
+
+/* Main Look */
+
+main {
+    width: 100%;
+    height: 750px;
+}
+
+main .container {
+    display: flex;
+    justify-content: center;
+    margin-left: -350px;
+}
+
+main .container .main-pic {
+    
+}
+
+main .container .main-pic img {
+    height: 610px;
+}
+
+main .container .main-paragraph {
+    align-self: center;
+    margin: -220px;
+    width: 500px;
+    height: 250px;
+}
+
+main .container .main-paragraph h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+main .container .main-paragraph p {
+    font-size: 45px;
+    letter-spacing: 1.5px;
+    margin-bottom: 35px;
+}
+
+main .container .main-paragraph a {
+    padding: 15px 45px;
+    font-size: 15px;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+    text-decoration: none;
+}
+
+main .container .main-paragraph a:hover {
+    transition:  .5s;
+    background-color: transparent;
+    border: 1px solid var(--bg-black);
+}
+
+/* Section One */
+
+section {
+    width: 100%;
+    height: 1000px;
+}
+
+section .section-one {
+
+}
+
+section .section-one .s-o-f {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 85px;
+    letter-spacing: 2.5px;
+    font-size: 40px;
+    color: var(--font-color);
+}
+
+section .section-one .s-o-display {
+    display: flex;
+    justify-content: center;
+}
+
+section .section-one .s-o-display .s-o-caption {
+    width: 416px;
+    height: 687px;
+    margin: 40px;    
+} 
+
+
+section .section-one .s-o-display .s-o-caption span {
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.8px;
+    color: var(--font-color);
+}
+
+
+section .section-one .s-o-display .s-o-caption p {
+    margin: 45px 0px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    line-height: 27.2px;
+    color: var(--font-color);
+}
+
+section .section-one .s-o-display .s-o-caption a {
+    padding: 15px 45px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-color);
+    border: 1px solid var(--font-color);
+}
+
+section .section-one .s-o-display .s-o-caption a:hover {
+    border: none;
+    transition: .4s ease;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+}
+
+section .section-one .s-o-display .s-o-video{
+    margin: 40px;
+    width: 600px;
+    height: 687px;
+}
+
+section .section-one .s-o-display .s-o-video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
