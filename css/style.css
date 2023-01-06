@@ -108,12 +108,12 @@ main .container .main-pic {
 }
 
 main .container .main-pic img {
-    height: 610px;
+    height: 650px;
 }
 
 main .container .main-paragraph {
     align-self: center;
-    margin: -220px;
+    margin: -180px;
     width: 500px;
     height: 250px;
 }
