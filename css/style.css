@@ -278,3 +278,117 @@ section .section-two .s-t-display .s-t-caption a:hover {
     color: var(--bg-white);
     background-color: var(--bg-green);
 }
+/* Slider Section, Three*/
+
+
+section .section-three {
+    background: var(--bg-overlay-color);
+    height: 800px;
+    position: relative;
+}
+
+section .section-three h1 {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 1.6px;
+    color: var(--font-color);
+}
+
+section .section-three .conainer-box {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section .section-three .conainer-box .indicator {
+    position: absolute;
+    left: 50%; bottom: -50px;
+    transform: translateX(-50%);
+}
+
+section .section-three .conainer-box .indicator .btn {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+    border-radius: 15px;
+    background: var(--bg-white);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+section .section-three .conainer-box .indicator .btn.active {
+    background: var(--bg-black);
+    opacity: .1;
+    width: 30px;
+}
+
+section .section-three .conainer-box .testimonial{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+section .section-three .slider-row {
+    display: flex;
+    width: 3200px;
+    transition: 0.5s;
+}
+
+section .section-three .slider-row .slider-col {
+    width: 800px;
+    height: 400px;
+    position: relative;
+}
+
+section .section-three .slider-row .slider-col .user-text {
+    background: var(--bg-green);
+    width: 520px;
+    height: 270px;
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    color: var(--bg-white);
+    padding: 30px;
+    z-index: 2;
+}
+
+section .section-three .slider-row .slider-col .user-text p {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+}
+
+section .section-three .slider-row .slider-col .user-text h3 {
+    margin: 35px 0 5px;
+    font-weight: 300;
+    color: var(--bg-white);
+}
+
+section .section-three .slider-row .slider-col .user-text .last-price {
+    display: inline-block;
+    text-decoration-line: line-through;
+    color: var(--font-color);
+}
+
+section .section-three .slider-row .slider-col .user-text span {
+    padding: 0px 5px;
+    font-size: 15px;
+    color: var(--font-color);
+}
+
+section .section-three .slider-row .slider-col .user-img {
+    position: absolute;
+    top: 0; right: 0;
+    height: 100%;
+}
+
+section .section-three .slider-row .slider-col .user-img img {
+    height: 100%;
+    border-radius: 10px;
+}
