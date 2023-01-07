@@ -695,6 +695,125 @@ main .third-page_container .main-th-p-paraghraph span {
     letter-spacing: 1.6px;
     border-bottom: 1px solid var(--bg-black);
 }
+/* Section one */
+
+section .section-one-th-p {
+    width: 100%;
+}
+
+section .section-one-th-p .section-one-th-p-display {
+    display: flex;
+    height: 900px;
+}
+
+section .section-one-th-p  .section-one-th-p-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: var(--bg-overlay-color);
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container {
+    height: 730px;
+    max-width: 600px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container .info {
+    height: 250px;
+    width: 419px;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container .info h2 {
+    margin: 50px 0 10px 0;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 0.8px;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container .info p {
+    font-size: 20px;
+    line-height: 27.2px;
+    letter-spacing: 0.8px;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container .title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+section .section-one-th-p  .section-one-th-p-form form .user-details .input-box {
+    margin-bottom: 30px;
+    width: calc(100% / 2);
+}
+
+section .section-one-th-p  .section-one-th-p-form .user-details .input-box .details {
+    display: block;
+    margin-bottom: 5px;
+}
+
+section .section-one-th-p  .section-one-th-p-form .user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 17px;
+    border: 1px solid var(--bg-black);
+    outline: none;
+    background-color: transparent;
+}
+
+section .section-one-th-p  .section-one-th-p-form .user-details .input-box input:focus,
+section .section-one-th-p  .section-one-th-p-form .user-details .input-box input:hover {
+    border: 2px solid var(--bg-gray);
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container form .button {
+    margin: 0 auto;
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container form .button input {
+    padding: 10px 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-gray);
+}
+
+section .section-one-th-p  .section-one-th-p-form .form-container form .button input:hover {
+    transition: 0.3s ease;
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+
+section .section-one-th-p .section-one-th-p-display .section-one-th-p-img {
+    background-image: url(/assets/contact-slide-pic.webp);
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+/* Section Two */
+
+section .third-page-video {
+    display: flex;
+    justify-content: center;
+    
+}
+
 
 
 
