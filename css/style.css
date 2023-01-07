@@ -469,6 +469,76 @@ section .section-four .section-four-display .s-f-img .o-s-img  {
     margin-top: -355px;
 }
 
+/* Section Five */
+
+section .section-five {
+    margin-top: 300px;
+    height: 950px;
+    background-color:  var(--bg-overlay-color-op);
+}
+
+section .section-five h2 {
+    text-align: center;
+    padding: 80px 0px;
+}
+
+section .section-five h2 span  {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 1.6px;
+    color: var(--font-color);
+}
+
+section .section-five .cards {
+    display: flex;
+    justify-content: center;
+}
+
+section .section-five .cards .card {
+    margin: 0px 30px;
+    height: 570px;
+    width: 272px;
+}
+
+section .section-five .cards .card .card-content h3{
+    margin: 17px 0px;
+}
+
+section .section-five .cards .card .card-content h3 span{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4px;
+    color: var(--bg-black);
+}
+
+section .section-five .cards .card .card-content p {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--font-color);
+}
+
+section .section-five .learn-more-btn {
+    display: flex;
+    margin: 0 auto;
+    width: 170px;
+}
+
+section .section-five .learn-more-btn a{
+    padding: 15px 45px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--bg-white);
+    background-color: var(--bg-gray);
+}
+
+section .section-five .learn-more-btn a:hover {
+    transition: .4s ease;
+    border: 1px solid var(--bg-black);
+    color: var(--bg-black);
+    background-color: transparent;
+}
 
 /* Footer-i */
 
