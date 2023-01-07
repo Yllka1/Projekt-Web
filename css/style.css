@@ -393,6 +393,153 @@ section .section-three .slider-row .slider-col .user-img img {
     border-radius: 10px;
 }
 
+/* Section Four */
+
+section .section-four {
+    width: 100%;
+}
+
+section .section-four h2 {
+    text-align: center;
+}
+
+section .section-four h2 span  {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 1.6px;
+    color: var(--font-color);
+}
+
+section .section-four .section-four-display {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .section-four .section-four-display .s-f-caption {
+    margin-top: 30px;
+    height: 225px;
+    width: 638px;
+}
+
+section .section-four .section-four-display .s-f-caption p {
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 1.5px;
+    color: var(--font-color);
+}
+
+section .section-four .section-four-display .s-f-caption .our-story-btn {
+    display: flex;
+    margin: 0 auto;
+    width: 158px;
+}
+
+section .section-four .section-four-display .s-f-caption .our-story-btn a {
+    padding: 15px 45px;
+    border: 1px solid var(--font-color);
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+section .section-four .section-four-display .s-f-caption .our-story-btn a:hover {
+    border: none;
+    transition: .4s ease;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+}
+
+section .section-four .section-four-display .s-f-img {
+    margin-top: 50px;
+    height: 810px;
+    width: 900px;    
+}
+
+section .section-four .section-four-display .s-f-img .bg-img img {
+    width: 100%;
+}
+
+section .section-four .section-four-display .s-f-img .o-s-img  {
+    display: flex;
+    justify-content: center;
+    margin-top: -355px;
+}
+
+/* Section Five */
+
+section .section-five {
+    margin-top: 300px;
+    height: 950px;
+    background-color:  var(--bg-overlay-color-op);
+}
+
+section .section-five h2 {
+    text-align: center;
+    padding: 80px 0px;
+}
+
+section .section-five h2 span  {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 1.6px;
+    color: var(--font-color);
+}
+
+section .section-five .cards {
+    display: flex;
+    justify-content: center;
+}
+
+section .section-five .cards .card {
+    margin: 0px 30px;
+    height: 570px;
+    width: 272px;
+}
+
+section .section-five .cards .card .card-content h3{
+    margin: 17px 0px;
+}
+
+section .section-five .cards .card .card-content h3 span{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4px;
+    color: var(--bg-black);
+}
+
+section .section-five .cards .card .card-content p {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--font-color);
+}
+
+section .section-five .learn-more-btn {
+    display: flex;
+    margin: 0 auto;
+    width: 170px;
+}
+
+section .section-five .learn-more-btn a{
+    padding: 15px 45px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--bg-white);
+    background-color: var(--bg-gray);
+}
+
+section .section-five .learn-more-btn a:hover {
+    transition: .4s ease;
+    border: 1px solid var(--bg-black);
+    color: var(--bg-black);
+    background-color: transparent;
+}
+
 /* Footer-i */
 
 footer {
