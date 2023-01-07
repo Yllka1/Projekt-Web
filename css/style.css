@@ -647,4 +647,54 @@ main .third-page_container .main-th-p-pic {
 }
 
 
+main .third-page_container .main-th-p-pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+main .third-page_container .main-th-p-paraghraph {
+    width: 572px;
+}
+
+main .third-page_container .main-th-p-paraghraph h1 {
+    margin-bottom: 40px;
+    font-size: 65px;
+    line-height: 75px;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+    color: var(--font-color);
+}
+
+main .third-page_container .main-th-p-paraghraph .decription-display {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+main .third-page_container .main-th-p-paraghraph .p-description {
+    margin: 10px 30px;
+}
+
+main .third-page_container .main-th-p-paraghraph .p-description span {
+    font-size: 21px;
+    letter-spacing: 0.8px;
+    border: none;
+    margin: 0;
+}
+
+main .third-page_container .main-th-p-paraghraph .p-description p {
+    font-size: 17px;
+    line-height: 27.2px;
+    letter-spacing: 0.8px;
+    color: var(--font-color);
+}
+
+main .third-page_container .main-th-p-paraghraph span {
+    margin-left: 28px;
+    font-size: 20px;
+    letter-spacing: 1.6px;
+    border-bottom: 1px solid var(--bg-black);
+}
+
+
 
