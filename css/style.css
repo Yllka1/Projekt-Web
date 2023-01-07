@@ -482,3 +482,22 @@ footer .boxes .box a i {
 .powerd-by span {
     color: var(--bg-white);
 }
+/* Third Page, Contact */
+
+/* Main Look */
+
+main .third-page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 710px;
+}
+
+main .third-page_container .main-th-p-pic {
+    margin-right: 150px;
+    width: 423px;
+    height: 503px;
+}
+
+
+
