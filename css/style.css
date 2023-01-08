@@ -629,6 +629,7 @@ footer .boxes .box a i {
 .powerd-by span {
     color: var(--bg-white);
 }
+
 /* PAGE 2, OUR STORY */
 
 main .second-page_container {
@@ -709,7 +710,7 @@ section .section-one-s-p .section-one-s-p-display .section-one-s-p-caption p {
 }
 
 section .section-one-s-p .section-one-s-p-display .section-one-s-p-img {
-
+    background-image: url(/assets/our-story-staf-pic.webp);
     width: 50%;
     background-repeat: no-repeat;
     background-size: cover;
