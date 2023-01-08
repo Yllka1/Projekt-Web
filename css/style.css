@@ -629,10 +629,10 @@ footer .boxes .box a i {
 .powerd-by span {
     color: var(--bg-white);
 }
+
 /* Third Page, Contact */
 
 /* Main Look */
-
 main .third-page_container {
     display: flex;
     justify-content: center;
@@ -645,7 +645,6 @@ main .third-page_container .main-th-p-pic {
     width: 423px;
     height: 503px;
 }
-
 
 main .third-page_container .main-th-p-pic img {
     height: 100%;
@@ -695,7 +694,7 @@ main .third-page_container .main-th-p-paraghraph span {
     letter-spacing: 1.6px;
     border-bottom: 1px solid var(--bg-black);
 }
-/* Section one */
+
 
 section .section-one-th-p {
     width: 100%;
@@ -740,72 +739,89 @@ section .section-one-th-p  .section-one-th-p-form .form-container .info p {
     letter-spacing: 0.8px;
 }
 
-section .section-one-th-p  .section-one-th-p-form .form-container .title {
+section .section-one-th-p  .section-one-th-p-form .form-container #title {
     font-size: 25px;
     font-weight: 500;
 }
 
-section .section-one-th-p  .section-one-th-p-form .form-container form .user-details {
+section .section-one-th-p  .section-one-th-p-form .form-container .input-field{
+    margin: 15px 0;
+    border: 1px solid var(--font-color);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
 }
 
-section .section-one-th-p  .section-one-th-p-form form .user-details .input-box {
-    margin-bottom: 30px;
-    width: calc(100% / 2);
-}
-
-section .section-one-th-p  .section-one-th-p-form .user-details .input-box .details {
-    display: block;
-    margin-bottom: 5px;
-}
-
-section .section-one-th-p  .section-one-th-p-form .user-details .input-box input {
-    height: 45px;
-    width: 100%;
-    padding-left: 15px;
-    font-size: 17px;
-    border: 1px solid var(--bg-black);
-    outline: none;
-    background-color: transparent;
-}
-
-section .section-one-th-p  .section-one-th-p-form .user-details .input-box input:focus,
-section .section-one-th-p  .section-one-th-p-form .user-details .input-box input:hover {
+section .section-one-th-p  .section-one-th-p-form .form-container .input-field:hover,
+section .section-one-th-p  .section-one-th-p-form .form-container .input-field:focus {
     border: 2px solid var(--bg-gray);
 }
 
-section .section-one-th-p  .section-one-th-p-form .form-container form .button {
-    margin: 0 auto;
+section .section-one-th-p  .section-one-th-p-form .form-container .input-field input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
 }
 
-section .section-one-th-p  .section-one-th-p-form .form-container form .button input {
-    padding: 10px 40px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border: none;
+section .section-one-th-p  .section-one-th-p-form .form-container .input-field i{
+    margin-left: 15px;
+    color: var(--bg-gray-ic);
+}
+
+section .section-one-th-p .section-one-th-p-form .form-container form p {
+    text-align: left;
+    font-size: 13px;
+}
+
+section .section-one-th-p .section-one-th-p-form .form-container form p a {
+    text-decoration: none;
+    color: var(--bg-green);
+}
+
+section .section-one-th-p .section-one-th-p-form .form-container form p a:hover {
     color: var(--bg-white);
-    background-color: var(--bg-gray);
+    transition: .3s ease-in-out;
 }
 
-section .section-one-th-p  .section-one-th-p-form .form-container form .button input:hover {
+section .section-one-th-p .section-one-th-p-form .form-container .btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+section .section-one-th-p .section-one-th-p-form .form-container .btn-field button{
+    background: var(--bg-gray);
+    color: var(--bg-white);
+    padding: 15px 90px;
+    border:0;
+    outline: 0;
+    cursor: pointer;
+}
+
+section .section-one-th-p .section-one-th-p-form .form-container .btn-field button:hover {
     transition: 0.3s ease;
     background-color: transparent;
     color: var(--bg-black);
     border: 1px solid var(--bg-black);
 }
 
+section .section-one-th-p .section-one-th-p-form .form-container .input-group{
+    height: 280px;
+
+}
+
 
 section .section-one-th-p .section-one-th-p-display .section-one-th-p-img {
-    background-image: url(/assets/contact-slide-pic.webp);
+    background-image: url(/e239d3a0aa10c771a57be6b9d9bf7cfa.jpg);
     width: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;   
 }
-
 /* Section Two */
 
 section .third-page-video {
@@ -813,7 +829,3 @@ section .third-page-video {
     justify-content: center;
     
 }
-
-
-
-

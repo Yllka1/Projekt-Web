@@ -65,9 +65,8 @@
 
 
 
-     <!-- Section one -->
-
-     <section>
+    <!-- Section one, Page Contact -->
+    <section>
         <div class="section-one-th-p">
             <div class="section-one-th-p-display">
                 <div class="section-one-th-p-form">
@@ -76,36 +75,27 @@
                             <h2>LET'S STAY CONNECTED</h2>
                             <p>If you have questions or special inquiries, you're welcome to contact us or fill out this form</p>
                         </div>
-                        <div class="title">Registration</div>
-                        <form action="#">
-                            <div class="user-details">
-                                <div class="input-box">
-                                    <span class="details">First Name</span>
-                                    <input type="text" required>
+                        <h1 id="title">Sign Up</h1>
+                        <form>
+                            <div class="input-group">
+                                <div class="input-field" id="nameField">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type = "text" placeholder="Name">
                                 </div>
-                                <div class="input-box">
-                                    <span class="details">Last Name</span>
-                                    <input type="text" required>
+                                <div class ="input-field">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type = "email" placeholder="Email">
                                 </div>
-                                <div class="input-box">
-                                    <span class="details">Email</span>
-                                    <input type="text" required>
+                                <div class ="input-field">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <input type ="password" placeholder="Password">
                                 </div>
-                                <div class="input-box">
-                                    <span class="details">Phone</span>
-                                    <input type="text" required>
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Password</span>
-                                    <input type="password" required>
-                                </div>
-                                <div class="input-box">
-                                    <span class="details">Confrim Password</span>
-                                    <input type="password" required>
-                                </div>
-                                <div class="button">
-                                    <input type="submit" value="Register">
-                                </div>
+                                <p>Forgot Password <a href = "#"> Click Here!</a></p>
+        
+                            </div>
+                            <div class ="btn-field">
+                                <button type ="button" id="signupbtn">Sign Up</button>
+                                <button type ="button" id="signinbtn" class ="disable">Sign In</button>
                             </div>
                         </form>
                     </div>
@@ -117,6 +107,8 @@
             </div>
         </div>
     </section>
+
+  
 
     <!-- Section two -->
 
@@ -142,8 +134,8 @@
                 <div class="box-one">
                     <p>SHOP</p>
                     <ul>
-                        <li><a href="#">CANDLES</a></li>
-                        <li><a href="#">SOAPS</a></li>
+                        <li><a href="#">EyeGlasses</a></li>
+                        <li><a href="#">Frames</a></li>
                         <li><a href="#">SALE</a></li>
                     </ul>
                 </div>
@@ -185,5 +177,9 @@
     <div class="powerd-by">
         <span>© 2023 by Frais. Powered and secured by Students</span>
     </div>
+
+
+    <script src="./js/form.js"></script>
+
     </body>
     </html>
