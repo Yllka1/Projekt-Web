@@ -10,14 +10,12 @@ signinbtn.onclick = function (){
     nameField.style.maxHeight= "0";
     nameField.style.border = "none";
     title.innerHTML = "Sign in";
-  
 }
 
 signupbtn.onclick = function (){
     nameField.style.maxHeight = "60px";
     nameField.style.border = "1px solid black";
     title.innerHTML = "Sign Up";
-
 }
 
 
@@ -60,10 +58,6 @@ signupbtn.addEventListener('click', (e) => {
 
 signinbtn.addEventListener('click', (e) => {
     e.preventDefault()
-
-    if (signinbtn === 'click' && e.detail > 0) {
-       return false;
-    }
 
     // validate email
     if(validateEmail(email.value)) {

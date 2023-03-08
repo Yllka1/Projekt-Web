@@ -1,36 +1,71 @@
+<?php 
+
+include 'config.php';
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)) {
+    header('location:login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
+
+    <!-- Webpage Title -->
+    <title>Home</title>
+
+    <!-- Styles / CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <title>Home</title>
 </head>
 <body>
 
     <!-- Implementimi i Header-it -->
 
     <header>
+        <!-- Navigacioni -->
         <nav>
-
             <ul>
-                <li><a href="home.html">HOME</a></li>
-                <li><a href="our-story.html">OUR STORY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-            </ul>    
-
+                <li><a href="home.php">HOME</a></li>
+                <li><a href="our-story.php">OUR STORY</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
+                <li><a href="sale.php">SALE</a></li>
+                <?php 
+                    $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                    $cart_rows_number = mysqli_num_rows($select_cart_number);
+                ?>
+                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?php echo $cart_rows_number; ?>)</span></a></li>
+            </ul>
+        
+            <!-- Logo -->
             <div class="logo">
-                <a href="home.html">FRAIS</a>
+                <a href="home.php">FRAIS</a>
             </div>
 
-            <div class="input-field">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="Search...">
+            <!-- Ikonat e nevojshme -->
+            <div class="users-icons">
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div class="input-field">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search...">
+                </div>
+            </div>
+
+            <!-- User Infos -->
+            <div class="user-box">
+                <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+                <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+                <a href="logout.php" class="logout-btn">Logout</a>
             </div>
         </nav>
     </header>
@@ -66,7 +101,9 @@
 
                     <p>Every pair of FRAIS glasses comes with anti-reflective, scratch-resistant lenses that block 100% of UV rays. Pick from a range of lens options to fit your vision needs.</p>
 
-                    <a href="#">Shop Glasses</a>
+                    <div class="shop-glasses">
+                        <a href="#">Shop Glasses</a>
+                    </div>
                 </div>
 
                 <div class="s-o-video">
@@ -75,10 +112,10 @@
             </div>
         </div>
     </section>
-    <section>
- 
-         <!-- Section Two -->
 
+    <!-- Section Two -->
+
+    <section>
         <div class="section-two">
             <div class="s-t-display">
                     <div class="s-t-img">
@@ -102,72 +139,75 @@
     <!-- Section Three -->
 
     <section>
-        <div class="section-three">
-            <h1>MOST POPULAR</h1>
+        <div class="home__slider">
+            <div class="section-three">
+                <h1>MOST POPULAR</h1>
+                
+                <div class="conainer-box">
+                    
+                    <div class="testimonial">
+                        <div class="slider-row" id="slide">
+                            <div class="slider-col">
+                                <div class="user-text">
+                                    <p>The &5 Extended Vision™ Reading Glasses feature a subtle feminine cateye style with thinner proportions that is perfect for smaller faces.   
+                                        Frame Measurements: 50 — 19 — 136 Learn how to measure your existing frames to compare</p>
+                                    <h3>MATTE BLACK</h3>
+                                    <div class="last-price">
+                                        <span>$360.00</span>
+                                    </div>
+                                    <span>$277.75</span>
+                                </div>
+                                <div class="user-img">
+                                    <img src="./assets/Slider-Img-1.jpg" alt="">
+                                </div>
+                            </div>
             
-            <div class="conainer-box">
-                <div class="indicator">
-                    <span class="btn active"></span>
-                    <span class="btn"></span>
-                    <span class="btn"></span>
-                    <span class="btn"></span>
-                </div>
-                <div class="testimonial">
-                    <div class="slider-row" id="slide">
-                        <div class="slider-col">
-                            <div class="user-text">
-                                <p>The &5 Extended Vision™ Reading Glasses feature a subtle feminine cateye style with thinner proportions that is perfect for smaller faces.   
-                                    Frame Measurements: 50 — 19 — 136 Learn how to measure your existing frames to compare</p>
-                                <h3>MATTE BLACK</h3>
-                                <div class="last-price">
-                                    <span>$360.00</span>
+                            <div class="slider-col">
+                                <div class="user-text">
+                                    <p>The &7 Extended Vision™ Reading Glasses feature a unisex design with strong angles creating a bold and beautiful rectangular shape that is lightweight and sized to fit smaller to medium faces. </p>
+                                    <h3>ANTIQUE GOLD</h3>
+                                    <span>$85.00</span>
                                 </div>
-                                <span>$277.75</span>
-                            </div>
-                            <div class="user-img">
-                                <img src="./assets/Slider-Img-1.jpg" alt="">
-                            </div>
-                        </div>
-        
-                        <div class="slider-col">
-                            <div class="user-text">
-                                <p>The &7 Extended Vision™ Reading Glasses feature a unisex design with strong angles creating a bold and beautiful rectangular shape that is lightweight and sized to fit smaller to medium faces. </p>
-                                <h3>ANTIQUE GOLD</h3>
-                                <span>$85.00</span>
-                            </div>
-                            <div class="user-img">
-                                <img src="./assets/Slider-Img-2.jpg" alt="">
-                            </div>
-                        </div>
-        
-                        <div class="slider-col">
-                            <div class="user-text">
-                                <p>The &6 Extended Vision™ Reading Glasses are built on a chassis of feather-light, semi-rimless, titanium frames with filigreed temples handcrafted in Japan. 
-                                    Frame Measurements: 47 — 21 — 143 Learn how to measure your existing frames to compare</p>
-                                <h3>GREEN MATTE</h3>
-                                <div class="last-price">
-                                    <span>$170.00</span>
+                                <div class="user-img">
+                                    <img src="./assets/Slider-Img-2.jpg" alt="">
                                 </div>
-                                <span>$140.25</span>
                             </div>
-                            <div class="user-img">
-                                <img src="./assets/Slider-Img-3.jpg" alt="">
-                            </div>
-                        </div>
-        
-                        <div class="slider-col">
-                            <div class="user-text">
-                                <p>The &3 Extended Vision™ Reading Glasses make their statement with strong angles and the longer endpieces produce a more relaxed fit for medium to larger faces.</p>
-                                <h3>TRANSPARENT</h3>
-                                <div class="last-price">
-                                    <span>$190.00</span>
+            
+                            <div class="slider-col">
+                                <div class="user-text">
+                                    <p>The &6 Extended Vision™ Reading Glasses are built on a chassis of feather-light, semi-rimless, titanium frames with filigreed temples handcrafted in Japan. 
+                                        Frame Measurements: 47 — 21 — 143 Learn how to measure your existing frames to compare</p>
+                                    <h3>GREEN MATTE</h3>
+                                    <div class="last-price">
+                                        <span>$170.00</span>
+                                    </div>
+                                    <span>$140.25</span>
                                 </div>
-                                <span>$119.50</span>
+                                <div class="user-img">
+                                    <img src="./assets/Slider-Img-3.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="user-img">
-                                <img src="./assets/Slider-Img-4.jpg" alt="">
+            
+                            <div class="slider-col">
+                                <div class="user-text">
+                                    <p>The &3 Extended Vision™ Reading Glasses make their statement with strong angles and the longer endpieces produce a more relaxed fit for medium to larger faces.</p>
+                                    <h3>TRANSPARENT</h3>
+                                    <div class="last-price">
+                                        <span>$190.00</span>
+                                    </div>
+                                    <span>$119.50</span>
+                                </div>
+                                <div class="user-img">
+                                    <img src="./assets/Slider-Img-4.jpg" alt="">
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="indicator">
+                        <span class="btn active"></span>
+                        <span class="btn"></span>
+                        <span class="btn"></span>
+                        <span class="btn"></span>
                     </div>
                 </div>
             </div>
@@ -298,10 +338,11 @@
                         <li>INFO@MYSITE.COM</li>
                     </ul>
                     
-                    <span><a href="#"><i class="fa-brands fa-facebook-f d-p"></i></a></span>
-                    <span><a href="#"><i class="fa-brands fa-instagram d-p"></i></a></span>
-                    <span><a href="#"><i class="fa-brands fa-twitter d-p"></i></a></span>
-                    
+                    <div class="footer__icons">
+                        <span><a href="#"><i class="fa-brands fa-facebook-f d-p"></i></a></span>
+                        <span><a href="#"><i class="fa-brands fa-instagram d-p"></i></a></span>
+                        <span><a href="#"><i class="fa-brands fa-twitter d-p"></i></a></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -318,7 +359,8 @@
 
 
 
-    <!-- Java Script -->
+    <!-- Scripts -->
     <script src="./js/script.js"></script>
+    <script src="./js/slider.js"></script>
 </body>
 </html>

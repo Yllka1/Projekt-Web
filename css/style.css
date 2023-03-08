@@ -19,8 +19,8 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    font-family: arial;
 }
-
 
 /* First Page */
 
@@ -90,6 +90,10 @@ header nav .input-field input::placeholder {
     font-size: 17px;
 }
 
+header nav .menu-btn {
+    display: none;
+}
+
 /* Main Look */
 
 main {
@@ -139,6 +143,7 @@ main .container .main-paragraph a {
 
 main .container .main-paragraph a:hover {
     transition:  .5s;
+    color: var(--bg-black);
     background-color: transparent;
     border: 1px solid var(--bg-black);
 }
@@ -151,7 +156,7 @@ section {
 }
 
 section .section-one {
-
+    
 }
 
 section .section-one .s-o-f {
@@ -181,7 +186,6 @@ section .section-one .s-o-display .s-o-caption span {
     letter-spacing: 0.8px;
     color: var(--font-color);
 }
-
 
 section .section-one .s-o-display .s-o-caption p {
     margin: 45px 0px;
@@ -222,7 +226,7 @@ section .section-one .s-o-display .s-o-video video {
 /* Section Two */
 
 section .section-two {
-
+    
 }
 
 section .section-two .s-t-display {
@@ -278,13 +282,11 @@ section .section-two .s-t-display .s-t-caption a:hover {
     color: var(--bg-white);
     background-color: var(--bg-green);
 }
+
 /* Slider Section, Three*/
-
-
-section .section-three {
+section .home__slider {
     background: var(--bg-overlay-color);
     height: 800px;
-    position: relative;
 }
 
 section .section-three h1 {
@@ -299,15 +301,12 @@ section .section-three h1 {
 section .section-three .conainer-box {
     width: 800px;
     height: 400px;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
 
 section .section-three .conainer-box .indicator {
-    position: absolute;
-    left: 50%; bottom: -50px;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
 section .section-three .conainer-box .indicator .btn {
@@ -340,21 +339,20 @@ section .section-three .slider-row {
 }
 
 section .section-three .slider-row .slider-col {
+    display: flex;
+    align-items: center;
     width: 800px;
     height: 400px;
-    position: relative;
 }
 
 section .section-three .slider-row .slider-col .user-text {
     background: var(--bg-green);
     width: 520px;
     height: 270px;
-    position: absolute;
-    left: 0; top: 50%;
-    transform: translateY(-50%);
     border-radius: 10px;
     color: var(--bg-white);
     padding: 30px;
+    margin-right: -10px;
     z-index: 2;
 }
 
@@ -383,8 +381,6 @@ section .section-three .slider-row .slider-col .user-text span {
 }
 
 section .section-three .slider-row .slider-col .user-img {
-    position: absolute;
-    top: 0; right: 0;
     height: 100%;
 }
 
@@ -494,6 +490,7 @@ section .section-five h2 span  {
 section .section-five .cards {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 section .section-five .cards .card {
@@ -627,6 +624,8 @@ footer .boxes .box a i {
 }
 
 .powerd-by span {
+    font-size: 14px;
+    letter-spacing: 2.4px;
     color: var(--bg-white);
 }
 
@@ -710,6 +709,7 @@ section .section-one-s-p .section-one-s-p-display .section-one-s-p-caption p {
 }
 
 section .section-one-s-p .section-one-s-p-display .section-one-s-p-img {
+    background-image: url(../assets/our-story-staf-pic1.jpg);
     width: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -721,9 +721,6 @@ section .second-page-video {
     display: flex;
     justify-content: center;
 }
-
-
-
 
 /* Third Page, Contact */
 
@@ -906,6 +903,7 @@ section .section-one-th-p .section-one-th-p-form .form-container .input-group{
 
 section .section-one-th-p .section-one-th-p-display .section-one-th-p-img {
     width: 50%;
+    background-image: url(../assets/contact-2img\(1\).jpg);
     background-repeat: no-repeat;
     background-size: cover;   
 }
@@ -915,6 +913,339 @@ section .section-one-th-p .section-one-th-p-display .section-one-th-p-img {
 section .third-page-video {
     display: flex;
     justify-content: center;
-    
 }
+
+
+
+
+/* MEDIA QUERIES */
+
+/* Small Devices, Phones... */
+
+@media (max-width: 600px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    header nav ul {
+        display: block;
+        position: absolute;
+        top: 130px; left: 0; right: 0; bottom: 0;
+        background: var(--bg-overlay-color);
+        /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transition: .5s;
+    }
+
+    header nav ul.active {
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+    header nav ul a {
+        display: block;
+        margin: 80px 62px;
+        font-size: 20px;
+    }
+
+    header nav .input-field {
+        display: none;
+    }
+
+    header nav .logo {
+        padding: 8px 15px;
+    }
+
+    header nav .menu-btn {
+        display: inline-block;
+        font-size: 35px;
+    } 
+
+    /* Main Look */
+
+    main .container {
+        margin: 0;
+        padding: 0 20px;
+        flex-wrap: wrap-reverse;
+    }
+
+    main .container .main-pic {
+        height: 350px;
+    }
+
+    main .container .main-pic img {
+        height: 100%;
+    }
+
+    main .container .main-paragraph {
+        margin: 0;
+    }
+
+    main .container .main-paragraph h1 {
+        font-size: 16px;
+        letter-spacing: 1.6px;
+    }
+
+    main .container .main-paragraph p {
+        font-size: 29px;
+    }
+
+    main .container .main-paragraph a {
+        padding: 15px 30px;
+    }
+
+    /* Section One */
+
+    section {
+        height: auto;
+    }
+
+    section .section-one .s-o-f {
+        font-size: 17px;
+        margin-bottom: 35px;
+    }
+
+    section .section-one .s-o-display {
+        flex-wrap: wrap-reverse;
+    }
+
+    section .section-one .s-o-display .s-o-caption {
+        margin: 40px 20px;
+        height: 340px;
+    }
+
+    section .section-one .s-o-display .s-o-caption span {
+        display: flex;
+        justify-content: center;
+        font-size: 15px;
+        line-height: 22.4px;
+    }
+
+    section .section-one .s-o-display .s-o-caption p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    section .section-one .s-o-display .s-o-caption .shop-glasses {
+        display: flex;
+        justify-content: center;
+    }
+
+    section .section-one .s-o-display .s-o-caption a {
+        padding: 15px 30px;
+    }
+
+    section .section-one .s-o-display .s-o-video {
+        margin: 0;
+        height: 400px;
+    }
+
+    /* Section Two */
+
+    section .section-two .s-t-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section .section-two .s-t-img {
+        margin: 0 auto;
+    }
+
+    section .section-two .s-t-img img {
+        height: 425px;
+    }
+
+    section .section-two .s-t-caption {
+        margin: 0;
+        width: 390px;
+        height: 555px;
+        text-align: center;
+    }
+
+    section .section-two .s-t-display .s-t-caption span {
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    section .section-two .s-t-display .s-t-caption p {
+        margin: 45px 20px;
+        text-transform: lowercase;
+        font-size: 14px;
+    }
+
+    section .section-two .s-t-display .s-t-caption a {
+        padding: 15px 30px;
+    }
+
+    /* Section Three */
+
+    section .home__slider {
+        display: flex;
+        justify-content: center;
+        height: 900px;
+    }
+
+    section .section-three h1 {
+        font-size: 17px;
+        letter-spacing: 1.6px;
+    }
+
+    section .section-three .conainer-box {
+        height: 735px;
+    }
+
+    section .section-three .slider-row .slider-col {
+        margin: 160px 0;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    section .section-three .slider-row .slider-col .user-text {
+        margin: 0;
+        width: 340px;
+        height: 310px;
+    }
+
+    section .section-three .slider-row .slider-col .user-text p {
+        font-size: 14px;
+    }
+
+    section .section-three .slider-row .slider-col .user-text h3 {
+        font-size: 15px;
+    }
+    
+    section .section-three .slider-row .slider-col .user-text span {
+        font-size: 13px;
+    }
+
+    section .section-three .conainer-box .indicator .btn {
+        width: 13px;
+        height: 13px;
+    }
+
+    section .section-three .conainer-box .indicator .btn.active {
+        width: 28px;
+    } 
+
+    /* Section Four */
+
+    section .section-four h2 {
+        margin-top: 30px;
+    }
+
+    section .section-four h2 span {
+        font-size: 17px;
+        letter-spacing: 0.16px;
+    }
+
+    section .section-four .section-four-display .s-f-caption {
+        width: 385px;
+    }
+
+    section .section-four .section-four-display .s-f-caption p {
+        font-size: 14px;
+        line-height: 27.2px;
+    }
+
+    section .section-four .section-four-display .s-f-caption .our-story-btn a {
+        padding: 15px 35px;
+    }
+
+    section .section-four .section-four-display .s-f-img {
+        height: auto;
+        margin: 90px 0;
+    }
+
+    section .section-four .section-four-display .s-f-img .bg-img {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    section .section-four .section-four-display .s-f-img .bg-img img {
+        width: 300px;
+    }
+
+    section .section-four .section-four-display .s-f-img .o-s-img {
+        margin-top: -100px;
+    }
+
+    section .section-four .section-four-display .s-f-img .o-s-img img {
+        height: 250px;
+    }
+    
+    section .section-five {
+        margin: 0;
+        height: auto;
+    }
+
+    section .section-five h2 {
+        padding: 40px 0;
+    }
+
+    section .section-five h2 span {
+        font-size: 17px;
+    }
+
+    section .section-five .cards {
+        flex-direction: column;
+    }
+
+    section .section-five .cards .card .card-content h3 span {
+        font-size: 19px;
+    }
+
+    section .section-five .cards .card .card-content p {
+        font-size: 14px;
+    }
+
+    section .section-five .learn-more-btn a {
+        padding: 15px 35px;
+        margin-bottom: 65px;
+    }
+
+    /* Footer-i */
+
+    footer {
+        height: auto;
+    }
+
+    footer .boxes {
+        flex-direction: column;
+    }
+
+    footer .boxes .box {
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .powerd-by span {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    footer .boxes .box p {
+        text-align: center;
+    }
+
+    footer .boxes .box ul {
+        text-align: center;
+    }
+
+
+    footer .footer__icons {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+    }
+}
+
+
+
+/* Medium Devices, Tablets... */
+
+@media (min-width: 768px) {
+
+}
+
 
