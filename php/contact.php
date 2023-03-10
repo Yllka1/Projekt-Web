@@ -1,3 +1,32 @@
+<?php
+
+    include 'config.php';
+    
+    session_start();
+
+    $user_id = $_SESSION['user_id'];
+
+    if(!isset($user_id)) {
+        header('location:login.php');
+    }
+
+    if(isset($_POST['send'])) {
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $msg = mysqli_real_escape_string($conn, $_POST['message']);
+
+        $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND message = '$msg'") or die('query failed');
+
+        if(mysqli_num_rows($select_message) > 0) {
+            $message[] = 'Message sent already!';
+        } else {
+            mysqli_query($conn, "INSERT INTO `message`(user_id, name, email, message) VALUES('$user_id', '$name', '$email', '$msg')") or die('query failed');
+            $message[] = 'Message sent successfully!';
+        }
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,29 +43,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-
+    
+    <?php 
+        if(isset($message)) {
+            foreach($message as $message) {
+                echo  '
+                <div class="message">
+                    <span>'.$message.'</span>
+                    <i class="fas fa-times" onclick="this.parentElement.remove()"></i>
+                </div>
+            ';
+        }
+    }
+    ?>
     <!-- Header-i -->
 
     <header>
+        <!-- Navigacioni -->
         <nav>
             <ul>
-                <li><a href="home.html">HOME</a></li>
-                <li><a href="our-story.html">OUR STORY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-            </ul>    
-
+                <li><a href="home.php">HOME</a></li>
+                <li><a href="our-story.php">OUR STORY</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
+                <li><a href="sale.php">SALE</a></li>
+                <?php 
+                    $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                    $cart_rows_number = mysqli_num_rows($select_cart_number);
+                ?>
+                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?php echo $cart_rows_number; ?>)</span></a></li>
+            </ul>
+        
+            <!-- Logo -->
             <div class="logo">
-                <a href="home.html">FRAIS</a>
+                <a href="home.php">FRAIS</a>
             </div>
 
-            <div class="input-field">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="Search...">
+            <!-- Ikonat e nevojshme -->
+            <div class="users-icons">
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div class="input-field">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search...">
+                </div>
             </div>
 
-            <div class="menu-btn">
-                <i class="fa-solid fa-bars" id="hamburger-btn"></i>
+            <!-- User Infos -->
+            <div class="user-box">
+                <p>Username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+                <p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+                <a href="logout.php" class="logout-btn">Logout</a>
             </div>
         </nav>
     </header>
@@ -82,27 +138,25 @@
                             <h2>LET'S STAY CONNECTED</h2>
                             <p>If you have questions or special inquiries, you're welcome to contact us or fill out this form</p>
                         </div>
-                        <h1 id="title">Sign Up</h1>
-                        <form>
+                        <h1 id="title">Get in touch</h1>
+                        <form action="" method="post">
                             <div class="input-group">
+
                                 <div class="input-field" id="nameField">
-                                    <input type = "text" placeholder="Name" id="name" required>
+                                    <input type="text" name="name" placeholder="Name" required>
                                 </div> 
-                                <span id="name-label"></span>
                                 <div class ="input-field" >
-                                    <input type = "email" placeholder="Email" id="email" required>
+                                    <input type="email" name="email" placeholder="Email" id="email" required>
                                 </div>
-                                <span id="email-label"></span>
-                                <div class ="input-field" >
-                                    <input type ="password" placeholder="Password" id="password" required>
+                                <div class="textarea-field">
+                                    <textarea name="message" placeholder="Enter your message." id="" cols="30" rows="10"></textarea>
                                 </div>
-                                <span id="password-label"></span>
-                                <p>Forgot Password <a href = "#"> Click Here!</a></p>
                             </div>
+
                             <div class ="btn-field">
-                                <button type ="button" id="signupbtn">Sign Up</button>
-                                <button type ="button" id="signinbtn" class ="disable">Sign In</button>
+                                <input type="submit" value="Send" name="send" class="send">
                             </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -115,7 +169,7 @@
         </div>
     </section>
 
-  
+
 
     <!-- Section two -->
 
@@ -133,7 +187,7 @@
         <div class="boxes">
             <div class="box">
                 <div class="logo">
-                    <a href="home.html">FRAIS</a>
+                    <a href="home.php">FRAIS</a>
                 </div>
             </div>
 
@@ -160,8 +214,8 @@
                 <div class="box-one">
                     <p>FRAIS</p>
                     <ul>
-                        <li><a href="/our-story.html">OUR STORY</a></li>
-                        <li><a href="/contact.html">CONTACT US</a></li>
+                        <li><a href="/our-story.php">OUR STORY</a></li>
+                        <li><a href="/contact.php">CONTACT US</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
@@ -172,10 +226,11 @@
                         <li>INFO@MYSITE.COM</li>
                     </ul>
                     
-                    <span><a href="#"><i class="fa-brands fa-facebook-f d-p"></i></a></span>
-                    <span><a href="#"><i class="fa-brands fa-instagram d-p"></i></a></span>
-                    <span><a href="#"><i class="fa-brands fa-twitter d-p"></i></a></span>
-                    
+                    <div class="footer__icons">
+                        <span><a href="#"><i class="fa-brands fa-facebook-f d-p"></i></a></span>
+                        <span><a href="#"><i class="fa-brands fa-instagram d-p"></i></a></span>
+                        <span><a href="#"><i class="fa-brands fa-twitter d-p"></i></a></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,7 +242,6 @@
 
     <!-- Scripts -->
     <script src="./js/script.js"></script>
-    <script src="./js/form.js"></script>
 
     </body>
     </html>
