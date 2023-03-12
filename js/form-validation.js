@@ -1,10 +1,10 @@
 // Deklarimi i variablave per validim
+let register_now = document.getElementById('register_now')
 let name = document.getElementById('name')
 let email = document.getElementById('email')
 let password = document.getElementById('password')
 let confirm_password = document.getElementById('confirm_password')
 let choose = document.getElementById('choose')
-let register_now = document.getElementById('register_now')
 
 
 register_now.addEventListener('click', () => {
@@ -36,23 +36,29 @@ register_now.addEventListener('click', () => {
         password.style.background = 'transparent'
     }
 
-    // validate confirm password
-    if(confirm_password.value != password.value) {
+    if(password.value === '') {
         confirm_password.style.border = '2px solid red'
         confirm_password.style.background = '#e9938d'
-    } else {
+    } else if(password.value.length < 8) {
+        confirm_password.style.border = '2px solid red'
+        confirm_password.style.background = '#e9938d'
+    } else if(confirm_password.value === password.value) {
         confirm_password.style.border = '2px solid green'
         confirm_password.style.background = 'transparent'
+    } else {
+        confirm_password.style.border = '2px solid red'
+        confirm_password.style.background = '#e9938d'
     }
 
     // validate select/otpion
-    if(validatePassword(choose.value)) {
+    if(choose.value === '') {
         choose.style.border = '2px solid red'
         choose.style.background = '#e9938d'
     } else {
         choose.style.border = '2px solid green'
         choose.style.background = 'transparent'
     }
+
 })
 
 // Regular expressions(regex), eshte nje sekuence karakteresh qe formon nje model kerkimi(paterne). Per ket arsyje e kemi quajtur konstanten keshtu.
@@ -69,9 +75,4 @@ function validateEmail(email) {
 function validatePassword(password) {
     const regex = /[a-zA-Z0-9\.]{8}/g
     return password.match(regex) === null
-}
-
-function validatePassword(choose) {
-    const regex = /[a-zA-Z0-9\.]{8}/g
-    return choose.match(regex) === null
 }
