@@ -34,3 +34,15 @@ btn[3].onclick = function() {
     }
     this.classList.add("active")
 } 
+
+var menu = document.querySelector('#hamburger-btn')
+var navbar = document.querySelector('ul')
+
+menu.onclick = () => {
+    navbar.classList.toggle('active')
+}
+
+window.onscroll = () => {
+    navbar.classList.remove('active')
+}
+
