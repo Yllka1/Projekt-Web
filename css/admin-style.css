@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+:root {
+    --font-color: rgb(0, 0, 0);
+    --bg-green: rgb(145,145,102);
+    --bg-gray: rgb(94,94,74);
+    --bg-overlay-color: rgb(215,215,203);
+    --bg-black: #000;
+    --bg-white: #fff;
+    --bg-overlay-color-op: rgb(245, 245, 238);
+    --bg-delete: #c77575;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x: hidden !important;
+}
+
+/* Header-i */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+header nav ul li a{
+    border: none;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+header .logo {
+    padding: 10px 25px;
+    border: 3px solid var(--bg-black);
+}
+
+header .logo a {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+header .users-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+header .users-icons #menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+header .users-icons #user-btn {
+    cursor: pointer;
+}
+
+header .users-icons .input-field {
+    display: flex;
+    padding: 15px;
+    width: 220px;
+    border-bottom: 1.5px solid var(--bg-black);
+}
+
+header .users-icons .input-field:hover {
+    border: 2px solid var(--bg-black);
+}
+
+header .users-icons .input-field input {
+    border: none;
+    outline: 0;
+    padding-left: 10px;
+}
+
+header .users-icons .input-field input::placeholder {
+    font-size: 17px;
+}
+
+header nav .user-box {
+    display: none;
+    position: absolute;
+    top: 13%; right: 12%;
+    z-index: 1;
+    width: auto;
+    padding: 32px;
+    text-align: center;
+    transform: translateY(16px);
+    background-color: var(--bg-overlay-color-op);
+}
+
+header nav .user-box.active {
+    display: inline-block;
+}
+
+header nav .user-box p {
+    font-size: 20px;
+    color: var(--font-color);
+    margin-bottom: 24px;
+}
+
+header nav .user-box p span {
+    color: var(--bg-green);
+}
+
+header nav .user-box .logout-btn {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+}
+
+/* User Button */
+
+header nav  .user-icon {
+    position: relative;
+    left: 15%;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+/* Account Infos */
+
+header nav .account-box {
+    display: none;
+    position: absolute;
+    top: 13%; right: 12%;
+    width: auto;
+    padding: 32px;
+    text-align: center;
+    transform: translateY(16px);
+    background-color: var(--bg-overlay-color);
+}
+
+header nav .account-box.active {
+    display: inline-block;
+}
+
+header nav .account-box p {
+    font-size: 20px;
+    color: var(--bg-black);
+    margin-bottom: 24px;
+}
+
+header nav .account-box p span {
+    color: var(--bg-gray);
+}
+
+header nav .account-box .logout-btn {
+    cursor: pointer;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+}
+
+/* Hamburger Menu, Small Devices */
+
+header nav .menu-btn {
+    display: none;
+}
+
+
+/* Admin dashboard */
+
+.dashboard {
+    padding: 50px;
+}
+
+.dashboard .dashboard__title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 48px;
+    color: var(--font-color);
+}
+
+.dashboard .dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.dashboard .dashboard-container .dashboard-box {
+    margin: 10px 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--bg-black);
+}
+
+.dashboard .dashboard-container .dashboard-box h3 {
+    font-size: 64px;
+    color: var(--font-color);
+}
+
+.dashboard .dashboard-container .dashboard-box p {
+    margin-top: 24px;
+    padding: 24px;
+    font-size: 32px;
+    border: 1px solid var(--bg-black);
+    color: var(--font-color);
+}
+
+/* ADD Product section */
+
+.add-products .shop-products-title {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.add-products form {
+    margin: 0 auto;
+    padding: 32px;
+    width: 800px;
+    text-align: center;
+    background-color: var(--bg-overlay-color);
+}
+
+.add-products form h3 {
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 100;
+    color: var(--bg-black);
+}
+
+.add-products form .add_products__box{
+    margin: 16px 0;
+    padding: 19px 22px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid var(--bg-black);
+    color: var(--bg-black);
+    background-color: transparent;
+}
+
+.add-products form .add_product__btn {
+    cursor: pointer;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+    transition: all .3s ease;
+}
+
+.add-products form .add_product__btn:hover {
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+
+/* Show Products */
+
+.show__products .products__box_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.show__products .products__box_container .change__box {
+    text-align: center;
+    margin: 20px;
+    background-color: var(--bg-white);
+}
+
+.show__products .products__box_container .change__box .item {
+    width: 416px;
+    height: auto;
+    margin: 5px;
+}
+
+.show__products .products__box_container .change__box .item img{
+    width: 100%;
+}
+
+.show__products .products__box_container .change__box .name {
+    padding: 16px 0;
+    font-size: 22px;
+    color: var(--bg-black);
+}
+
+.show__products .products__box_container .change__box .price {
+    padding: 16px 0;
+    font-size: 28px;
+    color: var(--bg-green);
+}
+
+.show__products .products__box_container .change__box .option_btn {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-green);
+    transition: all .3s ease;
+}
+
+.show__products .products__box_container .change__box .option_btn:hover {
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+.show__products .products__box_container .change__box .delete_btn {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-delete);
+    transition: all .3s ease;
+}
+
+.show__products .products__box_container .change__box .delete_btn:hover {
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+.empty {
+    padding: 50px 24px;
+    font-size: 32px;
+    text-align: center;
+    color: var(--font-color);
+}
+
+
+.edit__product_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1200;
+    padding: 32px;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+
+.edit__product_form form {
+    width: 650px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--bg-white);
+}
+
+.edit__product_form form img {
+    height: 300px;
+    margin-bottom: 16px;
+}
+
+.edit__product_form form input {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 10px 22px;
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid var(--bg-black);
+    color: var(--bg-black);
+}
+
+
+/* User Page */
+
+.users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.users .box__users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.users .box__users .box__user {
+    margin: 20px;
+    padding: 32px;
+    border: 1px solid var(--bg-black);
+}
+
+.users .box__users .box__user p {
+    padding: 10px 0;
+    font-size: 20px;
+    color: var(--font-color);
+    border-bottom: 1px solid var(--bg-black);
+}
+
+.users .box__users .box__user p span {
+    color: var(--bg-green);
+}
+
+.users .box__users .box__user .user_delete_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-delete);
+    transition: all .3s ease;
+}
+
+.users .box__users .box__user .user_delete_btn:hover {
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+
+/* Contact Messages Page */
+
+.contact__messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.contact__messages .contact__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact__messages .contact__container .contact__box {
+    margin: 20px;
+    padding: 32px;
+    border: 1px solid var(--bg-black);
+}
+
+.contact__messages .contact__container .contact__box p {
+    padding: 10px 0;
+    font-size: 20px;
+    border-bottom: 1px solid var(--bg-black);
+}
+
+.contact__messages .contact__container .contact__box p span {
+    font-weight: bold;
+    color: var(--bg-green);
+}
+
+.contact__messages .contact__container .contact__box .delete__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    color: var(--bg-white);
+    background-color: var(--bg-delete);
+    transition: all .3s ease;
+}
+
+.contact__messages .contact__container .contact__box .delete__message:hover {
+    background-color: transparent;
+    color: var(--bg-black);
+    border: 1px solid var(--bg-black);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer-i */
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+}
+
+footer .boxes {
+    display: flex;
+}
+
+footer .boxes .box {
+    margin: 0px 150px;
+    height: 500px;
+}
+
+footer .boxes .box .box-one {
+    width: 300px;
+    margin-top: 50px;
+}
+
+footer .boxes .box .box-two {
+    margin-top: 100px;
+}
+
+footer .boxes .box .logo {
+    margin-top: 50px;
+    padding: 10px 25px;
+    border: 3px solid var(--bg-black);
+}
+
+footer .boxes .box  .logo a {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--bg-black);
+}
+
+footer .boxes .box p {
+    font-size: 28px;
+    color: var(--font-color);
+}
+
+footer .boxes .box ul {
+    margin: 20px 0px;
+    list-style: none;
+}
+
+footer .boxes .box ul li {
+    line-height: 28.8px;
+}
+
+footer .boxes .box ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    color: var(--font-color);
+}
+
+footer .boxes .box span {
+    margin: 0px 8px;
+}
+
+footer .boxes .box a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--bg-black);
+}
+
+footer .boxes .box a i {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+/* Small Devices, Phones... */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Heder-i */
+
+    header nav {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    header nav ul {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 130px; left: 0; right: 0; bottom: 0;
+        background: var(--bg-overlay-color);
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transition: .5s;
+    }
+
+    header nav ul.active {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+    header nav ul a {
+        display: block;
+        margin: 80px 62px;
+        font-size: 20px;
+    }
+
+    header nav .input-field {
+        display: none;
+    }
+
+    header nav .logo {
+        padding: 8px 15px;
+    }
+
+    header .users-icons {
+        gap: 10px;
+    }
+
+    header nav .users-icons #user-btn {
+        font-size: 30px;
+    }
+
+    header nav .users-icons #menu-btn {
+        display: inline-block;
+        font-size: 35px;
+    }
+
+    header nav .users-icons .input-field {
+        display: none;
+    }
+
+    /* Page Three Dashbord Page */
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    /* Page Two Admin Sale Page */
+
+    .add-products form {
+        width: auto;
+    }
+
+    .show__products .products__box_container .change__box .item{
+        width: auto;
+    }
+
+    /* User Page */
+
+    .users {
+        padding: 20px;
+    }
+
+    .users .box__users .box__user p {
+        font-size: 17px;
+    }
+
+    /* Message Contact Page */
+
+    .contact__messages {
+        padding: 20px;
+    }
+
+    .contact__messages .contact__container .contact__box p {
+        font-size: 17px;
+    }
+
+    /* Footer-i */
+
+    footer {
+        height: auto;
+    }
+
+    footer .boxes {
+        flex-direction: column;
+    }
+
+    footer .boxes .box {
+        margin: 0 auto;
+        height: auto;
+    }
+
+    .powerd-by span {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    footer .boxes .box p {
+        text-align: center;
+    }
+
+    footer .boxes .box ul {
+        text-align: center;
+    }
+
+    footer .footer__icons {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+    footer .boxes .box .logo a {
+        font-size: 19px;
+        letter-spacing: 0.8px;
+    }
+
+    footer .boxes .box p {
+        font-size: 17px;
+    }
+
+    footer .boxes .box ul li {
+        font-size: 14px;
+    }
+
+    footer .boxes .box a i {
+        font-size: 17px;
+    }
+}
