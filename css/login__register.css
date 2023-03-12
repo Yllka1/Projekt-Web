@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+:root {
+    --font-color: rgb(0, 0, 0);
+    --bg-green: rgb(145,145,102);
+    --bg-gray: rgb(94,94,74);
+    --bg-overlay-color: rgb(215,215,203);
+    --bg-black: #000;
+    --bg-white: #fff;
+    --bg-overlay-color-op: rgb(245, 245, 238);
+    --bg-delete: #c77575;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    font-family: arial;
+}
+
+/* First Page */
+
+.register__form {
+    min-height: 100vh;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.register__form form {
+    padding: 16px;
+    width: 650px;
+    background-color: var(--bg-overlay-color);
+}
+
+.register__form form h3 {
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+    color: var(--bg-black);
+}
+
+.register__form form  .box {
+    width: 100%;
+    background-color: transparent;
+    padding: 18px 15px;
+    font-size: 28px;
+    color: var(--bg-black);
+    border: 1px solid black;
+    margin: 15px 0; 
+    font-size: 16px;
+}
+
+.register__form form input {
+    outline: 0;
+}
+
+.register__form form .btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 15px 70px;
+    cursor: pointer;
+    font-size: 28px;
+    border: none;
+    background-color: var(--bg-gray);
+    color: var(--bg-white);
+    transition: all .3s ease;
+    font-size: 16px;
+}
+
+.register__form form .btn:hover {
+    border: 1px solid black;
+    color: var(--font-color);
+    background: transparent;
+}
+
+.register__form form p {
+    padding-top: 24px;
+    font-size: 14px;
+    color: var(--bg-black);
+}
+
+.register__form form p a {
+    color: var(--bg-green);
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.register__form form p a:hover {
+    color: var(--bg-white);
+}
+
+.message {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: var(--bg-white);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    gap: 24;
+}
+
+.message span {
+    font-size: 32px;
+    color: var(--bg-black);
+}
+
+.message i {
+    cursor: pointer;
+    color: var(--bg-delete);
+    font-size: 42px;
+}
+
+.message i:hover {
+    transform: rotate(90deg);
+}
